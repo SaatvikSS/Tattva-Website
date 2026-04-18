@@ -31,8 +31,22 @@
             --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
         }
 
+        html[data-theme="dark"],
+        html[data-theme="dark"] body {
+            --apple-text: #f5f5f7;
+            --apple-text-secondary: #86868b;
+            --apple-bg: #000000;
+            --apple-nav: rgba(0, 0, 0, 0.72);
+            --apple-bento-bg: #1d1d1f;
+            --apple-bento-bg-dark: #1d1d1f;
+            --apple-accent: #2997ff;
+            --apple-accent-hover: #147ce5;
+            --apple-border: #424245;
+        }
+        
         @media (prefers-color-scheme: dark) {
-            :root {
+            html:not([data-theme="light"]), 
+            html:not([data-theme="light"]) body {
                 --apple-text: #f5f5f7;
                 --apple-text-secondary: #86868b;
                 --apple-bg: #000000;
@@ -129,7 +143,27 @@
             color: var(--apple-text);
         }
 
-        @media (max-width: 734px) {
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--apple-text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            padding: 4px;
+        }
+        .theme-toggle:hover { opacity: 1; }
+
+        @media (max-width: 834px) {
             .nav-links { display: none; }
         }
 
@@ -348,9 +382,23 @@
         .span-third { grid-column: span 2; }
         .span-two-third { grid-column: span 4; }
 
-        @media (max-width: 900px) {
-            .bento-grid { grid-template-columns: 1fr; }
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(4, 1fr); padding: 0 20px; }
+            .span-full { grid-column: span 4; }
+            .span-half, .span-third, .span-two-third { grid-column: span 2; }
+            .bento-card { padding: 32px; }
+            .bento-title { font-size: 28px; }
+            .iphone-wrapper { transform: scale(0.9); margin-bottom: 0; }
+        }
+
+        @media (max-width: 734px) {
+            .bento-grid { grid-template-columns: 1fr; padding: 0 16px; }
             .span-full, .span-half, .span-third, .span-two-third { grid-column: span 1; }
+            .bento-card { padding: 24px; border-radius: 24px; }
+            .bento-title { font-size: 24px; }
+            .hero h1 { font-size: 40px; padding: 0 10px; }
+            .hero h2 { font-size: 20px; }
+            .iphone-wrapper { transform: scale(0.85); margin-top: 10px; margin-bottom: -40px; }
         }
 
         .bento-label {
@@ -535,13 +583,29 @@
                 <img src="app-logo.png" alt="Tattva">
                 Tattva
             </a>
-            <nav class="nav-links">
-                <a href="#overview">Overview</a>
-                <a href="#features">Features</a>
-                <a href="#support">Support</a>
-                <a href="https://saatvikss.github.io/TattvaApp.github.io/">Privacy</a>
-                <a href="https://saatvikss.github.io/TattvaApp.github.io/">Terms</a>
-            </nav>
+            <div class="header-actions">
+                <nav class="nav-links">
+                    <a href="#overview">Overview</a>
+                    <a href="#features">Features</a>
+                    <a href="#support">Support</a>
+                    <a href="https://saatvikss.github.io/TattvaApp.github.io/">Privacy</a>
+                    <a href="https://saatvikss.github.io/TattvaApp.github.io/">Terms</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <!-- Sun Icon -->
+                    <svg id="themeIcon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -727,6 +791,58 @@
                         top: offsetPosition,
                         behavior: "smooth"
                     });
+                }
+            });
+        });
+
+        // Theme Toggle Manager
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const htmlElement = document.documentElement;
+
+            const sunPaths = `
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            `;
+            
+            const moonPaths = `
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            `;
+
+            // Check localStorage
+            const currentTheme = localStorage.getItem('theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Apply stored theme
+            if (currentTheme) {
+                htmlElement.setAttribute('data-theme', currentTheme);
+                if (currentTheme === 'dark') themeIcon.innerHTML = sunPaths;
+                else themeIcon.innerHTML = moonPaths;
+            } else {
+                if (systemDark) themeIcon.innerHTML = sunPaths;
+                else themeIcon.innerHTML = moonPaths;
+            }
+
+            toggleButton.addEventListener('click', () => {
+                const isCurrentlyDark = htmlElement.getAttribute('data-theme') === 'dark' || 
+                    (!htmlElement.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+                if (isCurrentlyDark) {
+                    htmlElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                    themeIcon.innerHTML = moonPaths; // Switch icon to moon (implies click to dark)
+                } else {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeIcon.innerHTML = sunPaths; // Switch icon to sun
                 }
             });
         });
