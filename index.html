@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Tattva — Daily Gita Wisdom & Meaning</title>
+    <meta name="description" content="Tattva is a free, ad-free iOS app for daily philosophical reflection rooted in the Bhagavad Gita.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tattva — Daily Gita Wisdom & Meaning">
+    <meta property="og:description" content="A free, ad-free iOS app for daily philosophical reflection rooted in the Bhagavad Gita.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saatvikss.github.io/TattvaApp.github.io/">
+    <meta property="og:image" content="https://saatvikss.github.io/TattvaApp.github.io/app-logo.png">
+
+    <style>
+        /* CSS Reset & Roots */
+        :root {
+            /* Apple Standard Colors */
+            --apple-text: #1d1d1f;
+            --apple-text-secondary: #86868b;
+            --apple-bg: #ffffff;
+            --apple-nav: rgba(255, 255, 255, 0.72);
+            --apple-bento-bg: #f5f5f7;
+            --apple-bento-bg-dark: #000000;
+            --apple-accent: #0066cc;
+            --apple-accent-hover: #0077ed;
+            --apple-border: #d2d2d7;
+            
+            /* Typography Variables */
+            --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --apple-text: #f5f5f7;
+                --apple-text-secondary: #86868b;
+                --apple-bg: #000000;
+                --apple-nav: rgba(0, 0, 0, 0.72);
+                --apple-bento-bg: #1d1d1f;
+                --apple-bento-bg-dark: #1d1d1f;
+                --apple-accent: #2997ff;
+                --apple-accent-hover: #147ce5;
+                --apple-border: #424245;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--apple-bg);
+            color: var(--apple-text);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+        }
+
+        a {
+            color: var(--apple-accent);
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        /* ----------------------- */
+        /* GLOBAL NAV              */
+        /* ----------------------- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 44px;
+            background: var(--apple-nav);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            z-index: 9999;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            max-width: 1000px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--apple-text);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        
+        .brand img {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links a {
+            color: var(--apple-text-secondary);
+            transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .nav-links a:hover {
+            color: var(--apple-text);
+        }
+
+        @media (max-width: 734px) {
+            .nav-links { display: none; }
+        }
+
+        /* ----------------------- */
+        /* RIBBON BANNER           */
+        /* ----------------------- */
+        .ribbon {
+            margin-top: 44px;
+            background-color: var(--apple-bento-bg);
+            padding: 14px 0;
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid var(--apple-border);
+            color: var(--apple-text);
+        }
+        .ribbon a {
+            font-size: 14px;
+            position: auto;
+            display: inline-block;
+        }
+        .ribbon a:hover {
+            text-decoration: underline;
+        }
+
+        /* ----------------------- */
+        /* HERO SECTION            */
+        /* ----------------------- */
+        .hero {
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 0px;
+            background-color: var(--apple-bg);
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            line-height: 1.05;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin-bottom: 12px;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(24px, 4vw, 28px);
+            line-height: 1.1;
+            font-weight: 400;
+            color: var(--apple-text-secondary);
+            margin-bottom: 24px;
+            letter-spacing: 0.004em;
+        }
+
+        .hero-price {
+            font-size: 21px;
+            color: var(--apple-text-secondary);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 70px;
+        }
+
+        .btn-primary {
+            background-color: var(--apple-accent);
+            color: #ffffff;
+            padding: 12px 22px;
+            border-radius: 980px;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--apple-accent-hover);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .links-group {
+            display: flex;
+            align-items: center;
+            font-size: 21px;
+            font-weight: 400;
+        }
+        .links-group a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .links-group a:hover {
+            text-decoration: underline;
+        }
+
+        /* Advanced Realistic iPhone Frame */
+        .iphone-wrapper {
+            position: relative;
+            margin: 40px auto 60px;
+            width: 340px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .iphone-frame {
+            position: relative;
+            width: 100%;
+            border-radius: 54px;
+            background: #000; /* Real dark bezel */
+            border: 4px solid #d4d4d8; /* Silver/Natural Titanium rim */
+            /* Shadows for 3D metallic edge */
+            box-shadow: 
+                0 0 0 1px #a1a1aa,
+                inset 0 0 0 2px #333,
+                0 40px 100px -10px rgba(0, 0, 0, 0.4);
+            padding: 12px;
+            z-index: 10;
+        }
+
+        .iphone-screen {
+            width: 100%;
+            display: block;
+            border-radius: 38px;
+            overflow: hidden;
+            background-color: #000;
+            position: relative;
+            z-index: 1;
+        }
+
+        .iphone-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Hardware Side Buttons (Silver) */
+        .iphone-button {
+            position: absolute;
+            background: #d4d4d8;
+            border-radius: 4px;
+            border: 1px solid #a1a1aa;
+        }
+        .action-btn { width: 4px; height: 26px; left: -8px; top: 120px; }
+        .volume-up { width: 4px; height: 54px; left: -8px; top: 180px; }
+        .volume-down { width: 4px; height: 54px; left: -8px; top: 250px; }
+        .power-btn { width: 4px; height: 80px; right: -8px; top: 200px; }
+
+        @media (max-width: 734px) {
+            .iphone-wrapper { width: 280px; }
+            .iphone-frame {
+                border-radius: 46px;
+                padding: 10px;
+                border: 3px solid #d4d4d8;
+                box-shadow: 
+                    0 0 0 1px #a1a1aa,
+                    inset 0 0 0 2px #333,
+                    0 30px 60px rgba(0,0,0,0.4);
+            }
+            .iphone-screen { border-radius: 34px; }
+            .action-btn { top: 90px; height: 20px; left: -7px; }
+            .volume-up { top: 140px; height: 44px; left: -7px; }
+            .volume-down { top: 200px; height: 44px; left: -7px; }
+            .power-btn { top: 160px; height: 60px; right: -7px; }
+        }
+
+        /* ----------------------- */
+        /* BENTO GRID (FEATURES)   */
+        /* ----------------------- */
+        .bento-section {
+            background-color: var(--apple-bg);
+            padding: 160px 0;
+            border-top: 1px solid var(--apple-border);
+            position: relative;
+            z-index: 1; /* Under the phone */
+        }
+
+        .section-headline {
+            text-align: center;
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin-bottom: 60px;
+            line-height: 1.05;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-auto-rows: minmax(300px, auto);
+            gap: 20px;
+        }
+
+        .bento-card {
+            background-color: var(--apple-bento-bg);
+            border-radius: 30px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .span-full { grid-column: span 6; }
+        .span-half { grid-column: span 3; }
+        .span-third { grid-column: span 2; }
+        .span-two-third { grid-column: span 4; }
+
+        @media (max-width: 900px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .span-full, .span-half, .span-third, .span-two-third { grid-column: span 1; }
+        }
+
+        .bento-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--apple-text-secondary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bento-title {
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+        }
+
+        .bento-desc {
+            font-size: 19px;
+            line-height: 1.4;
+            color: var(--apple-text-secondary);
+            max-width: 400px;
+        }
+
+        /* Specific card overrides to look like Apple's dynamic cards */
+        .bento-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+            line-height: 1;
+        }
+
+        /* ----------------------- */
+        /* SUPPORT & FAQ (1.5)      */
+        /* ----------------------- */
+        .support-section {
+            background-color: var(--apple-bg);
+            padding: 100px 0;
+            border-top: 1px solid var(--apple-border);
+        }
+        
+        .support-wrapper {
+            display: grid;
+            grid-template-columns: 35% 65%;
+            gap: 40px;
+        }
+
+        @media (max-width: 800px) {
+            .support-wrapper { grid-template-columns: 1fr; }
+        }
+
+        .support-contact {
+            padding-right: 20px;
+        }
+
+        .support-contact h3 {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin-bottom: 24px;
+        }
+
+        .support-contact p {
+            font-size: 17px;
+            color: var(--apple-text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .support-email {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--apple-accent);
+        }
+        .support-email:hover {
+            text-decoration: underline;
+        }
+
+        /* Accordion in Apple Style */
+        .faq-item {
+            border-bottom: 1px solid var(--apple-border);
+        }
+        .faq-item:first-child {
+            border-top: 1px solid var(--apple-border);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 24px 0;
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--apple-text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--apple-text-secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 24px;
+            font-size: 17px;
+            color: var(--apple-text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ----------------------- */
+        /* DIRECTORY FOOTER        */
+        /* ----------------------- */
+        footer {
+            background-color: var(--apple-bento-bg);
+            padding: 20px 0 40px;
+            color: var(--apple-text-secondary);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .footer-note {
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--apple-border);
+            margin-bottom: 16px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--apple-text-secondary);
+            border-right: 1px solid var(--apple-border);
+            padding-right: 16px;
+        }
+        .footer-links a:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+        .footer-links a:hover {
+            color: var(--apple-text);
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Global Nav -->
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="brand">
+                <img src="app-logo.png" alt="Tattva">
+                Tattva
+            </a>
+            <nav class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#features">Features</a>
+                <a href="#support">Support</a>
+                <a href="https://saatvikss.github.io/TattvaApp.github.io/">Privacy</a>
+                <a href="https://saatvikss.github.io/TattvaApp.github.io/">Terms</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="ribbon">
+        Get 3 daily moments of wisdom, completely free. <a href="#">Download now <span>&gt;</span></a>
+    </div>
+
+    <!-- Hero -->
+    <main>
+        <section id="overview" class="hero">
+            <h1>Tattva. Daily rhythm,<br>reinvented.</h1>
+            <h2>Profound reflections mapped strictly to the Bhagavad Gita.<br>Ad-free, tracking-free, completely yours.</h2>
+            <div class="hero-price">Free on iOS 18.</div>
+            
+            <div class="hero-actions">
+                <a href="#" class="btn-primary">Download on the App Store</a>
+            </div>
+
+            <!-- Realistic CSS iPhone Model -->
+            <div class="iphone-wrapper">
+                <div class="iphone-frame">
+                    <div class="iphone-button action-btn"></div>
+                    <div class="iphone-button volume-up"></div>
+                    <div class="iphone-button volume-down"></div>
+                    <div class="iphone-button power-btn"></div>
+                    <div class="iphone-screen">
+                        <!-- Use user's real screenshot inside the bezel -->
+                        <img src="app-mockup.png" alt="Tattva App running on iOS">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Features -->
+        <section id="features" class="bento-section">
+            <div class="container">
+                <h2 class="section-headline">A mindful path.<br>In every detail.</h2>
+                
+                <div class="bento-grid">
+                    
+                    <div class="bento-card span-half">
+                        <div class="bento-icon">🌅</div>
+                        <div class="bento-label">Daily Rhythm</div>
+                        <h3 class="bento-title">Three daily moments.</h3>
+                        <p class="bento-desc">Each day brings curated reflections: a reading phase, contemplation pause, and a journaling prompt to guide your inner growth.</p>
+                    </div>
+
+                    <div class="bento-card span-half">
+                        <div class="bento-icon">📖</div>
+                        <div class="bento-label">Gita Discovery</div>
+                        <h3 class="bento-title">All 18 Yogas.</h3>
+                        <p class="bento-desc">Explore the Bhagavad Gita with verse-by-verse reading, original Sanskrit text, transliteration, and rich philosophical commentary.</p>
+                    </div>
+
+                    <div class="bento-card span-third">
+                        <div class="bento-icon">🍃</div>
+                        <h3 class="bento-title">Zen Garden.</h3>
+                        <p class="bento-desc">A meditative companion view providing a calming space for contemplation without distraction.</p>
+                    </div>
+
+                    <div class="bento-card span-third">
+                        <div class="bento-icon">✨</div>
+                        <h3 class="bento-title">Companions.</h3>
+                        <p class="bento-desc">Choose a spirit animal that evolves as you complete daily reflections.</p>
+                    </div>
+
+                    <div class="bento-card span-third">
+                        <div class="bento-icon">🔒</div>
+                        <h3 class="bento-title">Radically Private.</h3>
+                        <p class="bento-desc">No ads whatsoever. No tracking. Your personal reflections stay securely with you.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Apple Support Compliance Section -->
+        <section id="support" class="support-section">
+            <div class="container support-wrapper">
+                
+                <div class="support-contact">
+                    <h3>We're here<br>to help.</h3>
+                    <p>Contact our support team directly. We typically respond within 24 to 48 hours.</p>
+                    <a href="mailto:ss5372@srmist.edu.in?subject=Tattva%20Support" class="support-email">ss5372@srmist.edu.in <span>&rsaquo;</span></a>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">Is Tattva free to use?</button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Yes, Tattva is completely free containing no ads, no in-app purchases, and no hidden costs.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do I need an account to use the app?</button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                No. You can explore all content entirely offline without an account. An account is only required if you explicitly choose to sync your daily moment progress across devices.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">How do I permanently delete my account and data?</button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Open the Tattva app, navigate to Settings > Danger Zone > Delete Account. This will trigger immediate and permanent erasure of your data.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">What devices are supported?</button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Tattva supports iPhone and iPad devices running iOS 18 or later, strictly adhering to Apple's latest accessibility and dynamic type features.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-note">
+                <p>Tattva is available on the App Store for iOS devices running iOS 18 or later.</p>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    Copyright © 2026 Saatvik Shashank Shrivastava. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="https://saatvikss.github.io/TattvaApp.github.io/">Privacy Policy</a>
+                    <a href="https://saatvikss.github.io/TattvaApp.github.io/">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Apple style smooth accordion interactions
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const isActive = item.classList.contains('active');
+
+                // Gracefully collapse all open items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                    faq.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                // Expand current item
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const headerOffset = 44; // Global Nav Height
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
