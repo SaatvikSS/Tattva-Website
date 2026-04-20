@@ -10,8 +10,12 @@
     <meta property="og:title" content="Tattva — Daily Gita Wisdom & Meaning">
     <meta property="og:description" content="A free, ad-free iOS app for daily philosophical reflection rooted in the Bhagavad Gita.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://saatvikss.github.io/TattvaApp.github.io/">
-    <meta property="og:image" content="https://saatvikss.github.io/TattvaApp.github.io/app-logo.png">
+    <meta property="og:url" content="https://saatvikss.github.io/Tattva-Website/">
+    <meta property="og:image" content="https://saatvikss.github.io/Tattva-Website/app-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-logo.png">
+    <link rel="apple-touch-icon" href="app-logo.png">
 
     <style>
         /* CSS Reset & Roots */
@@ -248,9 +252,21 @@
         }
 
         .btn-primary:hover {
-            background-color: var(--apple-accent-hover);
-            color: #ffffff;
+            opacity: 0.8;
             text-decoration: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .hero-badge:hover {
+            transform: scale(1.02);
+        }
+        .hero-badge svg {
+            display: block;
+            height: 44px;
+            width: auto;
         }
 
         .links-group {
@@ -621,7 +637,15 @@
             <div class="hero-price">Free on iOS 18.</div>
             
             <div class="hero-actions">
-                <a href="https://apps.apple.com/app/tattva/id6762041133" class="btn-primary">Download on the App Store</a>
+                <a href="https://apps.apple.com/app/tattva/id6762041133" class="hero-badge">
+                    <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M121.2 40H13.8C6.2 40 0 33.8 0 26.2V13.8C0 6.2 6.2 0 13.8 0h107.4C128.8 0 135 6.2 135 13.8v12.4c0 7.6-6.2 13.8-13.8 13.8z" fill="#000"/>
+                        <path d="M22.9 22.8c.1 4.2 3.6 5.6 3.7 5.7s-3.7 5.1-6.6 5.1c-1.3 0-2.6-.9-3.3-.9-1.3 0-2.6.9-3.3.9-3.8 0-7.3-3.1-7.3-4.1-1-.1-2.9-2.2-4.1-3.6C1.1 24.5.1 22 .1 19.3c0-2.7 1.1-5.3 2.2-6.6 1.4-1.6 3.4-2.5 5.5-2.5 1 0 2.2.4 3 .8.7.4 1.9.8 3 .8s2.3-.4 3-.8c.9-.4 2.1-.8 3.3-.8 1.9 0 3.7.8 5.1 2.2-1.3.8-2.1 2.2-2.1 3.7 0 1.8 1.1 3.2 2.6 4.1.1.1 0 .2.2.8zm-4.7-14c1 1.2 1.6 2.8 1.4 4.4-1.4.1-3.2-.6-4.2-1.8-1-1.2-1.6-2.9-1.4-4.5 1.6-.1 3.2.7 4.2 1.9z" fill="#fff" transform="translate(10, 8) scale(0.6)"/>
+                        <g fill="#fff">
+                            <path d="M43.7 27.6h-2.1l-1-2.4h-5.2l-1 2.4h-2l4.6-11h2.1l4.6 11zm-3.8-4.1l-1.8-4.4-1.8 4.4h3.6zM54.5 22.9c0 3.3-2.1 5-4.4 5-1.5 0-2.3-.6-2.6-.9v3.4h-1.9v-11h1.9v1.2c.4-.6 1.3-1.4 2.8-1.4 2.3 0 4.2 1.7 4.2 5zm-1.9 0c0-2.2-1.2-3.3-2.6-3.3s-2.3 1.1-2.3 3.3 1.1 3.3 2.4 3.3 2.5-1.1 2.5-3.3zM65.4 22.9c0 3.3-2.1 5-4.4 5-1.5 0-2.3-.6-2.6-.9v3.4h-1.9v-11h1.9v1.2c.4-.6 1.3-1.4 2.8-1.4 2.3 0 4.2 1.7 4.2 5zm-1.9 0c0-2.2-1.2-3.3-2.6-3.3s-2.3 1.1-2.3 3.3 1.1 3.3 2.4 3.3 2.5-1.1 2.5-3.3zM70.9 22.3c0-1.8 1.5-2.5 3.3-2.5h1.2v1.3h-1c-1.3 0-1.7.5-1.7 1.3v5.2h-1.9v-7.3c0-.7.1-1 .1-1s-.1-.1-.1-.1c-.4-.1-.1-1 0-1h.2zM79.8 24.3c.1 2.2 1.5 3.6 3.4 3.6s3-1.2 3.1-2.6h1.9c-.2 2.6-2.3 4.2-4.9 4.2-3.1 0-5.4-2.2-5.4-4.8 0-3.3 2-4.9 4.6-4.9 2.5 0 4.8 1.5 5.2 4.5h-7.9zm.1-1.3h5.9c-.2-1.9-1.5-3-3.1-3-1.5 0-2.6.9-2.8 3zM100.8 20.8v-2.3h1.9v2.3h2.6v1.4h-2.6v3.9c0 1 .4 1.4 1.2 1.4h.8v1.3c-.6.1-1.3.1-1.6.1-1.7 0-2.3-.8-2.3-2.4v-4.4h-1.6v-1.4h1.6zM116 22.9c0 3.3-2.5 5-5 5-3.1 0-5.3-2.2-5.3-4.8 0-3.3 2.1-4.9 4.7-4.9s4.8 1.5 5.2 4.5h-7.9c.1 2.2 1.1 3.3 3.1 3.3s3.1-1.1 3.2-2.5h1.9c-.1.2.3.4.3.4zm-8.3-1.3h5.9c-.2-1.9-1.3-3-2.8-3-1.5 0-2.7 1.1-3 3z" transform="translate(10, 8) scale(0.6)"/>
+                        </g>
+                    </svg>
+                </a>
             </div>
 
             <!-- Realistic CSS iPhone Model -->
