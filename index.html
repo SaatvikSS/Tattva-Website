@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Tattva — Daily Gita Wisdom & Meaning</title>
-    <meta name="description" content="Tattva is a free, ad-free iOS app for daily philosophical reflection rooted in the Bhagavad Gita.">
-    
+    <title>Tattva — Bhagavad Gita Audio</title>
+    <meta name="description"
+        content="Tattva is a free, ad-free iOS app for daily philosophical reflection rooted in the Bhagavad Gita.">
+
     <!-- Open Graph -->
     <meta property="og:title" content="Tattva — Daily Gita Wisdom & Meaning">
-    <meta property="og:description" content="A free, ad-free iOS app for daily philosophical reflection rooted in the Bhagavad Gita.">
+    <meta property="og:description"
+        content="A free, ad-free iOS app for daily philosophical reflection rooted in the Bhagavad Gita.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://saatvikss.github.io/Tattva-Website/">
     <meta property="og:image" content="https://saatvikss.github.io/Tattva-Website/app-logo.png">
@@ -30,7 +33,7 @@
             --apple-accent: #0066cc;
             --apple-accent-hover: #0077ed;
             --apple-border: #d2d2d7;
-            
+
             /* Typography Variables */
             --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
         }
@@ -47,9 +50,10 @@
             --apple-accent-hover: #147ce5;
             --apple-border: #424245;
         }
-        
+
         @media (prefers-color-scheme: dark) {
-            html:not([data-theme="light"]), 
+
+            html:not([data-theme="light"]),
             html:not([data-theme="light"]) body {
                 --apple-text: #f5f5f7;
                 --apple-text-secondary: #86868b;
@@ -123,7 +127,7 @@
             font-weight: 600;
             letter-spacing: -0.01em;
         }
-        
+
         .brand img {
             width: 16px;
             height: 16px;
@@ -165,10 +169,15 @@
             transition: opacity 0.2s;
             padding: 4px;
         }
-        .theme-toggle:hover { opacity: 1; }
+
+        .theme-toggle:hover {
+            opacity: 1;
+        }
 
         @media (max-width: 834px) {
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+            }
         }
 
         /* ----------------------- */
@@ -183,11 +192,13 @@
             border-bottom: 1px solid var(--apple-border);
             color: var(--apple-text);
         }
+
         .ribbon a {
             font-size: 14px;
             position: auto;
             display: inline-block;
         }
+
         .ribbon a:hover {
             text-decoration: underline;
         }
@@ -287,11 +298,13 @@
             font-size: 21px;
             font-weight: 400;
         }
+
         .links-group a {
             display: inline-flex;
             align-items: center;
             gap: 4px;
         }
+
         .links-group a:hover {
             text-decoration: underline;
         }
@@ -309,10 +322,12 @@
             position: relative;
             width: 100%;
             border-radius: 54px;
-            background: #000; /* Real dark bezel */
-            border: 4px solid #d4d4d8; /* Silver/Natural Titanium rim */
+            background: #000;
+            /* Real dark bezel */
+            border: 4px solid #d4d4d8;
+            /* Silver/Natural Titanium rim */
             /* Shadows for 3D metallic edge */
-            box-shadow: 
+            box-shadow:
                 0 0 0 1px #a1a1aa,
                 inset 0 0 0 2px #333,
                 0 40px 100px -10px rgba(0, 0, 0, 0.4);
@@ -343,27 +358,77 @@
             border-radius: 4px;
             border: 1px solid #a1a1aa;
         }
-        .action-btn { width: 4px; height: 26px; left: -8px; top: 120px; }
-        .volume-up { width: 4px; height: 54px; left: -8px; top: 180px; }
-        .volume-down { width: 4px; height: 54px; left: -8px; top: 250px; }
-        .power-btn { width: 4px; height: 80px; right: -8px; top: 200px; }
+
+        .action-btn {
+            width: 4px;
+            height: 26px;
+            left: -8px;
+            top: 120px;
+        }
+
+        .volume-up {
+            width: 4px;
+            height: 54px;
+            left: -8px;
+            top: 180px;
+        }
+
+        .volume-down {
+            width: 4px;
+            height: 54px;
+            left: -8px;
+            top: 250px;
+        }
+
+        .power-btn {
+            width: 4px;
+            height: 80px;
+            right: -8px;
+            top: 200px;
+        }
 
         @media (max-width: 734px) {
-            .iphone-wrapper { width: 280px; }
+            .iphone-wrapper {
+                width: 280px;
+            }
+
             .iphone-frame {
                 border-radius: 46px;
                 padding: 10px;
                 border: 3px solid #d4d4d8;
-                box-shadow: 
+                box-shadow:
                     0 0 0 1px #a1a1aa,
                     inset 0 0 0 2px #333,
-                    0 30px 60px rgba(0,0,0,0.4);
+                    0 30px 60px rgba(0, 0, 0, 0.4);
             }
-            .iphone-screen { border-radius: 34px; }
-            .action-btn { top: 90px; height: 20px; left: -7px; }
-            .volume-up { top: 140px; height: 44px; left: -7px; }
-            .volume-down { top: 200px; height: 44px; left: -7px; }
-            .power-btn { top: 160px; height: 60px; right: -7px; }
+
+            .iphone-screen {
+                border-radius: 34px;
+            }
+
+            .action-btn {
+                top: 90px;
+                height: 20px;
+                left: -7px;
+            }
+
+            .volume-up {
+                top: 140px;
+                height: 44px;
+                left: -7px;
+            }
+
+            .volume-down {
+                top: 200px;
+                height: 44px;
+                left: -7px;
+            }
+
+            .power-btn {
+                top: 160px;
+                height: 60px;
+                right: -7px;
+            }
         }
 
         /* ----------------------- */
@@ -374,7 +439,8 @@
             padding: 160px 0;
             border-top: 1px solid var(--apple-border);
             position: relative;
-            z-index: 1; /* Under the phone */
+            z-index: 1;
+            /* Under the phone */
         }
 
         .section-headline {
@@ -405,28 +471,88 @@
             transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
         }
 
-        .span-full { grid-column: span 6; }
-        .span-half { grid-column: span 3; }
-        .span-third { grid-column: span 2; }
-        .span-two-third { grid-column: span 4; }
+        .span-full {
+            grid-column: span 6;
+        }
+
+        .span-half {
+            grid-column: span 3;
+        }
+
+        .span-third {
+            grid-column: span 2;
+        }
+
+        .span-two-third {
+            grid-column: span 4;
+        }
 
         @media (max-width: 1024px) {
-            .bento-grid { grid-template-columns: repeat(4, 1fr); padding: 0 20px; }
-            .span-full { grid-column: span 4; }
-            .span-half, .span-third, .span-two-third { grid-column: span 2; }
-            .bento-card { padding: 32px; }
-            .bento-title { font-size: 28px; }
-            .iphone-wrapper { transform: scale(0.9); margin-bottom: 0; }
+            .bento-grid {
+                grid-template-columns: repeat(4, 1fr);
+                padding: 0 20px;
+            }
+
+            .span-full {
+                grid-column: span 4;
+            }
+
+            .span-half,
+            .span-third,
+            .span-two-third {
+                grid-column: span 2;
+            }
+
+            .bento-card {
+                padding: 32px;
+            }
+
+            .bento-title {
+                font-size: 28px;
+            }
+
+            .iphone-wrapper {
+                transform: scale(0.9);
+                margin-bottom: 0;
+            }
         }
 
         @media (max-width: 734px) {
-            .bento-grid { grid-template-columns: 1fr; padding: 0 16px; }
-            .span-full, .span-half, .span-third, .span-two-third { grid-column: span 1; }
-            .bento-card { padding: 24px; border-radius: 24px; }
-            .bento-title { font-size: 24px; }
-            .hero h1 { font-size: 40px; padding: 0 10px; }
-            .hero h2 { font-size: 20px; }
-            .iphone-wrapper { transform: scale(0.85); margin-top: 10px; margin-bottom: -40px; }
+            .bento-grid {
+                grid-template-columns: 1fr;
+                padding: 0 16px;
+            }
+
+            .span-full,
+            .span-half,
+            .span-third,
+            .span-two-third {
+                grid-column: span 1;
+            }
+
+            .bento-card {
+                padding: 24px;
+                border-radius: 24px;
+            }
+
+            .bento-title {
+                font-size: 24px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+                padding: 0 10px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .iphone-wrapper {
+                transform: scale(0.85);
+                margin-top: 10px;
+                margin-bottom: -40px;
+            }
         }
 
         .bento-label {
@@ -468,7 +594,7 @@
             padding: 100px 0;
             border-top: 1px solid var(--apple-border);
         }
-        
+
         .support-wrapper {
             display: grid;
             grid-template-columns: 35% 65%;
@@ -476,7 +602,9 @@
         }
 
         @media (max-width: 800px) {
-            .support-wrapper { grid-template-columns: 1fr; }
+            .support-wrapper {
+                grid-template-columns: 1fr;
+            }
         }
 
         .support-contact {
@@ -502,6 +630,7 @@
             font-weight: 600;
             color: var(--apple-accent);
         }
+
         .support-email:hover {
             text-decoration: underline;
         }
@@ -510,6 +639,7 @@
         .faq-item {
             border-bottom: 1px solid var(--apple-border);
         }
+
         .faq-item:first-child {
             border-top: 1px solid var(--apple-border);
         }
@@ -591,17 +721,19 @@
             border-right: 1px solid var(--apple-border);
             padding-right: 16px;
         }
+
         .footer-links a:last-child {
             border-right: none;
             padding-right: 0;
         }
+
         .footer-links a:hover {
             color: var(--apple-text);
             text-decoration: underline;
         }
-
     </style>
 </head>
+
 <body>
 
     <!-- Global Nav -->
@@ -621,7 +753,8 @@
                 </nav>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <!-- Sun Icon -->
-                    <svg id="themeIcon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg id="themeIcon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor"
+                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -638,20 +771,23 @@
     </header>
 
     <div class="ribbon">
-        Get 3 daily moments of wisdom, completely free. <a href="https://apps.apple.com/app/tattva/id6762041133">Download now <span>&gt;</span></a>
+        Get 3 daily moments of wisdom, completely free. <a
+            href="https://apps.apple.com/app/tattva/id6762041133">Download now <span>&gt;</span></a>
     </div>
 
     <!-- Hero -->
     <main>
         <section id="overview" class="hero">
-            <h1>Tattva. Daily rhythm,<br>reinvented.</h1>
-            <h2>Profound reflections mapped strictly to the Bhagavad Gita.<br>Ad-free, tracking-free, completely yours.</h2>
-            <div class="hero-price">Free on iOS 18.</div>
-            
+            <h1>Tattva: Bhagavad Gita<br>Audio.</h1>
+            <h2>Profound reflections mapped strictly to the Bhagavad Gita.<br>Ad-free, tracking-free, completely yours.
+            </h2>
+            <div class="hero-price">Free on iOS 26.</div>
+
             <div class="hero-actions">
                 <a href="https://apps.apple.com/app/tattva/id6762041133" class="btn-primary">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        <path
+                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                     </svg>
                     Download on the App Store
                 </a>
@@ -676,39 +812,44 @@
         <section id="features" class="bento-section">
             <div class="container">
                 <h2 class="section-headline">A mindful path.<br>In every detail.</h2>
-                
+
                 <div class="bento-grid">
-                    
+
                     <div class="bento-card span-half">
                         <div class="bento-icon">🌅</div>
                         <div class="bento-label">Daily Rhythm</div>
                         <h3 class="bento-title">Three daily moments.</h3>
-                        <p class="bento-desc">Each day brings curated reflections: a reading phase, contemplation pause, and a journaling prompt to guide your inner growth.</p>
+                        <p class="bento-desc">Start your day with curated reflections: a philosophical concept, a modern
+                            scenario, and a prompt to guide your inner growth.</p>
                     </div>
 
                     <div class="bento-card span-half">
-                        <div class="bento-icon">📖</div>
-                        <div class="bento-label">Gita Discovery</div>
-                        <h3 class="bento-title">All 18 Yogas.</h3>
-                        <p class="bento-desc">Explore the Bhagavad Gita with verse-by-verse reading, original Sanskrit text, transliteration, and rich philosophical commentary.</p>
-                    </div>
-
-                    <div class="bento-card span-third">
-                        <div class="bento-icon">🍃</div>
-                        <h3 class="bento-title">Zen Garden.</h3>
-                        <p class="bento-desc">A meditative companion view providing a calming space for contemplation without distraction.</p>
+                        <div class="bento-icon">🎧</div>
+                        <div class="bento-label">Audio Books</div>
+                        <h3 class="bento-title">Listen offline.</h3>
+                        <p class="bento-desc">Experience all 18 chapters in studio-quality Sanskrit audio. Download
+                            chapters to your device for completely offline playback.</p>
                     </div>
 
                     <div class="bento-card span-third">
                         <div class="bento-icon">✨</div>
-                        <h3 class="bento-title">Companions.</h3>
-                        <p class="bento-desc">Choose a spirit animal that evolves as you complete daily reflections.</p>
+                        <h3 class="bento-title">Liquid Glass.</h3>
+                        <p class="bento-desc">Rebuilt for iOS 26 with a breathtaking spatial interface, haptics, and
+                            deep dark mode integration.</p>
+                    </div>
+
+                    <div class="bento-card span-third">
+                        <div class="bento-icon">🦻</div>
+                        <h3 class="bento-title">Built for Everyone.</h3>
+                        <p class="bento-desc">Features an OpenDyslexic font, High Contrast mode, and a built-in Voice
+                            Over engine.</p>
                     </div>
 
                     <div class="bento-card span-third">
                         <div class="bento-icon">🔒</div>
                         <h3 class="bento-title">Radically Private.</h3>
-                        <p class="bento-desc">No ads whatsoever. No tracking. Your personal reflections stay securely with you.</p>
+                        <p class="bento-desc">No ads whatsoever. No subscriptions. Your personal reflections stay
+                            securely on your device.</p>
                     </div>
 
                 </div>
@@ -718,11 +859,12 @@
         <!-- Apple Support Compliance Section -->
         <section id="support" class="support-section">
             <div class="container support-wrapper">
-                
+
                 <div class="support-contact">
                     <h3>We're here<br>to help.</h3>
                     <p>Contact our support team directly. We typically respond within 24 to 48 hours.</p>
-                    <a href="mailto:ss5372@srmist.edu.in?subject=Tattva%20Support" class="support-email">ss5372@srmist.edu.in <span>&rsaquo;</span></a>
+                    <a href="mailto:ss5372@srmist.edu.in?subject=Tattva%20Support"
+                        class="support-email">ss5372@srmist.edu.in <span>&rsaquo;</span></a>
                 </div>
 
                 <div class="faq-list">
@@ -730,7 +872,8 @@
                         <button class="faq-question">Is Tattva free to use?</button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                Yes, Tattva is completely free containing no ads, no in-app purchases, and no hidden costs.
+                                Yes, Tattva is completely free containing no ads, no in-app purchases, and no hidden
+                                costs.
                             </div>
                         </div>
                     </div>
@@ -739,7 +882,7 @@
                         <button class="faq-question">Do I need an account to use the app?</button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                No. You can explore all content entirely offline without an account. An account is only required if you explicitly choose to sync your daily moment progress across devices.
+                                You can explore the full Discover library and read all chapters without an account. However, a free account is required to use the Daily Moments and stream the studio-quality Audio Books, allowing you to seamlessly sync your progress across devices.
                             </div>
                         </div>
                     </div>
@@ -748,7 +891,8 @@
                         <button class="faq-question">How do I permanently delete my account and data?</button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                Open the Tattva app, navigate to Settings > Danger Zone > Delete Account. This will trigger immediate and permanent erasure of your data.
+                                Open the Tattva app, navigate to Settings > Danger Zone > Delete Account. This will
+                                trigger immediate and permanent erasure of your data.
                             </div>
                         </div>
                     </div>
@@ -757,7 +901,8 @@
                         <button class="faq-question">What devices are supported?</button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                Tattva supports iPhone and iPad devices running iOS 18 or later, strictly adhering to Apple's latest accessibility and dynamic type features.
+                                Tattva supports iPhone and iPad devices running iOS 26 or later, strictly adhering to
+                                Apple's latest accessibility and dynamic type features.
                             </div>
                         </div>
                     </div>
@@ -771,7 +916,7 @@
     <footer>
         <div class="container">
             <div class="footer-note">
-                <p>Tattva is available on the App Store for iOS devices running iOS 18 or later.</p>
+                <p>Tattva is available on the App Store for iOS devices running iOS 26 or later.</p>
             </div>
             <div class="footer-bottom">
                 <div class="copyright">
@@ -809,17 +954,17 @@
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
+                if (targetId === '#') return;
+
                 e.preventDefault();
                 const target = document.querySelector(targetId);
                 if (target) {
                     const headerOffset = 44; // Global Nav Height
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
+
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: "smooth"
@@ -845,7 +990,7 @@
                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             `;
-            
+
             const moonPaths = `
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             `;
@@ -865,7 +1010,7 @@
             }
 
             toggleButton.addEventListener('click', () => {
-                const isCurrentlyDark = htmlElement.getAttribute('data-theme') === 'dark' || 
+                const isCurrentlyDark = htmlElement.getAttribute('data-theme') === 'dark' ||
                     (!htmlElement.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
                 if (isCurrentlyDark) {
@@ -881,4 +1026,5 @@
         });
     </script>
 </body>
+
 </html>
